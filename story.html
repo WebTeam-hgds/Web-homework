@@ -2,11 +2,24 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>哈根达斯中国</title>
-		<link rel="stylesheet" type="text/css" href="./css/home.css"/>
+		<style>
+				 @import url("css/story.css");
+				img{border:0}/* css 注释说明：设置图片边框为0 */ 
+				body{behavior:url("csshover.htc");text-align:center;}/* css注释说明：兼容ie6 支持标签使用hover */ 
+				.divcss5{ position:relative;width:250px; height:160px;margin:0 auto} 
+				.divcss5 span{display:none; text-decoration:none}
+				.divcss5:hover{cursor:pointer} 
+				/* .divcss5:hover a.now{cursor:pointer; position:absolute; top:0; width:100%; height:100%;
+				z-index:100; left:0; display:block;} */
+				.divcss5:hover span{ display:block;position:absolute; bottom:0; left:0;color:#FFE4B5;font-family:"microsoft yahei";width:250px; 
+				z-index:10;height:160px; line-height:36px; background:#000;filter:alpha(opacity=50);-moz-opacity:0.5;opacity: 0.5;}
+				/* 设置显示文字定位位置，背景半透明 */ 
+				 
+				</style> 
+		<title></title>
 		
 		<!-- 导入jquery库 -->
-		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>  
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 		
 		<script type="text/javascript">
 		(function($){
@@ -51,7 +64,7 @@
 		    });
 		});
 		</script>
-
+		
 		<script type="text/javascript">
 		    var a_idx = 0;
 		    jQuery(document).ready(function($) {
@@ -106,22 +119,89 @@
 		<script>var meting_api='http://api.mizore.cn/meting/api.php?server=:server&type=:type&id=:id'</script>
 		<script src="http://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 		<script src="http://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
-
-
+		
 		
 	</head>
 	<body>
-		
-		<img src="./img/1/home.png" class="i1"/>
-		<div id="a1">
-			<a href="http://127.0.0.1:8848/Web-homework/index.html">中国大陆</a>
-		</div>
-		
-		<img src="./img/1/home2.png" class="i2"/>
-		
-		
-		
-
 	</body>
 </html>
-
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="./css/story.css"/>
+	</head>
+	<body>
+		<div id="father">
+			
+			<img src="./img/2/1.png" id="i1">
+			<div id="gg">
+				<ul class="u1">
+					<li><a href="#">品牌故事</a></li>
+					<li><a href="http://127.0.0.1:8848/Web-homework/production.html">产品系列</a></li>
+					<li><a href="http://127.0.0.1:8848/Project/login.html">会员专区</a></li>
+					<li><a href="http://127.0.0.1:8848/Project/Mall.html">商城</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="dazi">
+			<p>haagen—Dazs'history story</p>
+		</div>
+		<div id="story">
+			
+							<div class="story story1">
+							        <ul class="ul_story">
+							            <li>
+							               <div class="divcss5" style="background:url(img/11/p1.jpg)">
+		                                       <span>
+												  <p>优质工艺</p>
+												  <p>全球的冰淇淋爱好者们都将哈根达斯视为奢华体验的象征</p>
+												   </span>
+		                                             <a href="#" class="now">&nbsp;</a>
+		                                           </div> 
+							                          </li>
+													  <li>
+														  <div class="divcss5" style="background:url(img/11/p2.jpg)">
+														  <span>
+															  <p>品牌故事</p>
+															  <p>1921年，企业家鲁本·马斯特满怀对品质的热忱与追求开启了冰淇淋事业</p>
+															  </span>
+														  <a href="#" class="now">&nbsp;</a>
+														  </div> 
+													  </li>
+		                                         
+		                                           
+												
+												    <li>
+													<div class="divcss5" style="background:url(img/11/p3.jpg)">
+													<span>
+														<p>遍及世界</p>
+														<p>哈根达斯冰淇淋，以优质品质闻遐，带给人们关于浪漫、惊喜的时刻</p>
+													</span>
+													<a href="#" class="now">&nbsp;</a>
+													</div> 
+												</li>
+												<li>
+													<div class="divcss5" style="background:url(img/11/p4.jpg)">
+													<span>
+														<p>最新资讯</p>
+														<p>618限时活动火热进行中！</p>
+													</span>
+													<a href="#" class="now">&nbsp;</a>
+													</div> 
+												</li>
+												</div>
+												
+							 
+						</div>
+		<div id="down">
+			<ul class="u2">
+				<li><a href="#">联系我们&nbsp;&nbsp;  |</a></li>
+				<li><a href="#">隐私条款&nbsp;&nbsp;  |</a></li>
+				<li><a href="#">使用条款&nbsp;&nbsp;  |</a></li>
+				<li><a href="#">分享&nbsp;&nbsp;  </a></li>
+			</ul>
+		</div>
+	</body>
+</html>

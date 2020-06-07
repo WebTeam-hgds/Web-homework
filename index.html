@@ -4,6 +4,110 @@
 		<meta charset="utf-8" />
 		<title>首页</title>
 		<link rel="stylesheet" type="text/css" href="./css/index.css"/>
+		
+		<!-- 导入jquery库 -->
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		
+		<script type="text/javascript">
+		(function($){
+		    $.fn.snow = function(options){
+		    var $flake = $('<div id="snowbox" />').css({'position': 'absolute','z-index':'9999', 'top': '-50px'}).html('&#10052;'),
+		    documentHeight     = $(document).height(),
+		    documentWidth    = $(document).width(),
+		    defaults = {
+		        minSize        : 10,
+		        maxSize        : 20,
+		        newOn        : 1000,
+		        flakeColor    : "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+		    },
+		    options    = $.extend({}, defaults, options);
+		    var interval= setInterval( function(){
+		    var startPositionLeft = Math.random() * documentWidth - 100,
+		    startOpacity = 0.5 + Math.random(),
+		    sizeFlake = options.minSize + Math.random() * options.maxSize,
+		    endPositionTop = documentHeight - 200,
+		    endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+		    durationFall = documentHeight * 10 + Math.random() * 5000;
+		    $flake.clone().appendTo('body').css({
+		        left: startPositionLeft,
+		        opacity: startOpacity,
+		        'font-size': sizeFlake,
+		        color: options.flakeColor
+		    }).animate({
+		        top: endPositionTop,
+		        left: endPositionLeft,
+		        opacity: 0.2
+		    },durationFall,'linear',function(){
+		        $(this).remove()
+		    });
+		    }, options.newOn);
+		    };
+		})(jQuery);
+		$(function(){
+		    $.fn.snow({ 
+		        minSize: 5, /* 定义雪花最小尺寸 */
+		        maxSize: 80,/* 定义雪花最大尺寸 */
+		        newOn: 300  /* 定义密集程度，数字越小越密集 */
+		    });
+		});
+		</script>
+		
+		<script type="text/javascript">
+		    var a_idx = 0;
+		    jQuery(document).ready(function($) {
+		        $("body").click(function(e) {
+		            var a = new Array("七星伴月", "爱琴海之舟梦", "彩云追月", "伊甸园", "心醉浪漫", "浪漫奇缘分", "浓情蜜意" ,"宠爱一生", "给我的爱", "玲珑心意", "仲夏野莓", "曲奇香奶");
+		            var $i = $("<span/>").text(a[a_idx]);
+		            a_idx = (a_idx + 1) % a.length;
+		            var x = e.pageX,
+		                y = e.pageY;
+		            $i.css({
+		                "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+		                "top": y - 20,
+		                "left": x,
+		                "position": "absolute",
+		                "font-weight": "bold",
+		                "color": "#ff6651"
+		            });
+		            $("body").append($i);
+		            $i.animate({
+		                    "top": y - 180,
+		                    "opacity": 0
+		                },
+		                1500,
+		                function() {
+		                    $i.remove();
+		                });
+		        });
+		    });
+		</script>
+		
+		<!-- 板娘 -->
+		<div id="page_end_html">
+		    <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+		    <script>
+		        var  style2="https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json"
+		            ,style3="https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json"
+		            ,style4="https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json"
+		            ,style5="https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"
+		            ,style6="https://unpkg.com/live2d-widget-model-z16@1.0.5/assets/z16.model.json"
+		            ,style7="https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json"
+		        L2Dwidget.init({ "model": { jsonPath:
+		                style6,
+		                "scale": 1 }, "display": { "position": "left", "width": 150, "height": 300,
+		                "hOffset": 0, "vOffset": -20 }, "mobile": { "show": true, "scale": 0.5 },
+		            "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 } });
+		    </script>
+		</div>
+		
+		<!-- 导入网易云歌单 -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+		<div class="aplayer" data-id="5054236775" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-volume="0.6" ></div>
+		<script>var meting_api='http://api.mizore.cn/meting/api.php?server=:server&type=:type&id=:id'</script>
+		<script src="http://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+		<script src="http://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+		
+		
 	</head>
 	<body>
 		<div id="father">
@@ -11,7 +115,7 @@
 			<img src="./img/2/1.png" id="i1">
 			<div id="gg">
 				<ul class="u1">
-					<li><a href="品牌故事.asp">品牌故事</a></li>
+					<li><a href="http://127.0.0.1:8848/Web-homework/story.html">品牌故事</a></li>
 					<li><a href="http://127.0.0.1:8848/Web-homework/production.html">产品系列</a></li>
 					<li><a href="http://127.0.0.1:8848/Web-homework/login.html">会员专区</a></li>
 					<li><a href="http://127.0.0.1:8848/Web-homework/Mall.html">商城</a></li>
